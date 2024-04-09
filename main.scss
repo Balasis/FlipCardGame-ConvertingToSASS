@@ -1,3 +1,5 @@
+
+
 html{
   height:100%;
   width:100%;
@@ -11,8 +13,1342 @@ html,body{
 *{box-sizing: border-box;}
 body{
   min-height:100%;
+  background-color: rgb(242, 241, 235);
   position: relative;
+  background-color: rgb(242, 241, 235);
   font-family: 'Montserrat';
   overflow-x:hidden;
 }
+
+//HeaderNav
+
+
+#navbar_wrapper{
+  position: absolute;
+  top: 2em;
+  display: flex;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  left:0;
+  right:0;
+  // width: fit-content;
+}
+nav{
+  // position: absolute;
+  // top: 2em;
+  display: block;
+  font-weight: bold;
+  font-family: Helvetica, Arial;
+  max-width: 1200px;
+  width: 80%;
+}
+.flex-container-navbar{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+
+
+#block-main-menu a:link{
+  color: rgb(242, 241, 235);
+  background-color: transparent;
+  text-decoration: none;
+  opacity: 0.7;
+}
+#block-main-menu a:hover{
+  color: rgb(242, 241, 235);
+  background-color: transparent;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  opacity: 1;
+}
+#block-main-menu a:visited{
+  color: rgb(242, 241, 235);
+  background-color: transparent;
+  text-decoration: none;
+  opacity: 0.7;
+}
+#menu_item_gallery{
+  font-family: 'Montserrat';
+  padding-top: 60px;
+}
+#menu_item_home{
+  font-family: 'Montserrat';
+  position: absolute;
+}
+.dropdown{
+  font-family: 'Montserrat';
+  position: relative;
+  padding-top: 60px;
+  margin: auto;
+}
+#menu_item_about{
+  font-family: 'Montserrat';
+  padding-top: 60px;
+}
+#menu_item_home img{
+  top: 0;
+}
+
+
+//following is for the dropdown menus in the navbar
+
+.drop-option{
+  color:rgb(242, 241, 235);
+  background-color: transparent;
+  text-decoration: none;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+}
+
+.dropdown-cont{
+  display: none;
+  position: absolute;
+  min-width: 140px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-cont ul{
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+.dropdown-cont li{
+  // padding: 12px 12px;
+  display: block;
+  background-color: rgb(175, 200, 173);
+}
+.dropdown-cont li:hover{
+  background-color: rgb(175, 200, 173);
+}
+#resourceList a:link{
+  color:rgb(175, 200, 173);
+  font-weight: bold;
+}
+#otherList a:link{
+  color:rgb(242, 241, 235);
+  font-weight: bold;
+}
+#resourceList a:visited{
+  color:rgb(242, 241, 235);
+  font-weight: bold;
+}
+#otherList a:visited{
+  color:rgb(242, 241, 235);
+  font-weight: bold;
+}
+
+#otherList a, #resourceList a{
+  display:block;
+  width: 100%;
+  height: 100%;
+  padding: 12px 12px;
+}
+.dropdown:hover .dropdown-cont{
+  display: block;
+}
+
+//Landing Image
+
+.imgbox{
+  display: grid;
+  height: 100%;
+  object-fit: fill;
+  position: relative;
+}
+
+//Navbar for phone:
+//styling of burger menu
+
+
+.infoList li, .resourcesList li{
+  margin: 10px 0;
+}
+
+
+
+.infoList, .resourcesList{
+  list-style-type: none;
+}
+
+.infoList a, .resourcesList a{
+  display:block;
+  width: 100%;
+  height: 100%;
+  padding: 12px 12px;
+}
+#info-content, #resources-content{
+  display: none;
+}
+
+#info-content a:link{
+  color: white;
+  text-decoration: none;
+}
+
+#info-content a:hover{
+  text-decoration: underline;
+}
+
+#info-content a:visited{
+  color: white;
+  text-decoration: none;
+}
+
+#resources-content ul{
+  list-style-type: none;
   
+}
+
+#resources-content a:link{
+  color: white;
+  text-decoration: none;
+}
+
+#resources-content a:hover{
+  text-decoration: underline;
+}
+
+#resources-content a:visited{
+  color: white;
+  text-decoration: none;
+}
+
+.hamburger{
+  display:none;
+  position: absolute;
+  z-index: 100;
+  top: 1rem;
+  left: 1rem;
+  padding: 4px;
+  background: transparent;
+  border: transparent solid 1px;
+  cursor: pointer;
+  color: rgb(237, 185, 67);
+}
+
+.closeIcon {
+  display:none;
+  color:white;
+}
+
+.menuItem {
+  display: block;
+  margin: 2rem 4rem;
+  font-size: 1.8rem;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.menuItem:hover {
+  text-decoration: underline;
+}
+
+.menu {
+  display: none;
+  position:absolute;
+ 
+  
+  transition:325ms linear;
+ 
+  width:100%;
+  min-height:100vh;
+  z-index: 99;
+  background: rgb(237, 185, 67);
+  opacity: 0;
+  color: white;
+  list-style: none;
+  padding-top: 4rem;
+  margin-top:calc(-2em - 100vh);
+  
+}
+
+
+.heightIt{
+  height:25em;
+}
+
+#alterHeightOfNavInThesePagesAbout{
+  min-height:calc(100vh - (100vh - 25em) );
+  padding-top:initial;
+}
+
+
+
+.showMenu{
+     // transform: translateY(0);
+   margin-top:-2em;
+   opacity:0.7;
+}
+
+.showMenuOpacityChangeOnClick{
+  opacity:1.0;
+}
+
+
+
+// Footer
+
+.center-fit{
+  width: 100%;
+  height: 100vh;
+  margin:auto;
+  
+}
+  
+
+
+
+
+.row{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+}
+
+
+
+
+
+.rowFooter{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width:25%;
+}
+
+.columnFooter{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+}
+
+
+
+
+footer{
+  
+  box-shadow:
+  0 4px 58px rgba(0, 0, 0, 0.3),
+  0 8px 72px rgba(0, 0, 0, 0.3);
+  position:relative;
+  height: 15em;
+  width:100%;
+}
+
+.footer_wrapper{
+
+  height:100%;
+  background-color: rgb(175, 200, 173);
+  font-family: 'Montserrat';
+  font-size: 15px;
+
+ display:flex;
+ justify-content: space-around;
+  width: 100%;   
+  padding-bottom:2em; 
+  padding-top:2em;
+}
+
+/*
+.footer_wrapper::before{
+  content:"";
+  top:0;
+position:absolute;
+width:100%;
+height:0;
+box-shadow:0px 0px 50px gold;
+}
+
+*/
+
+.footerRightsS{
+  display:flex;
+  flex-direction: column;
+  width:20%;
+  height:100%;
+  justify-content: flex-end;
+  align-items: center;
+ 
+}
+
+
+.footerMiddleWrapIt{
+  display:flex;
+  flex-direction: row;
+  width:45%;
+  height:100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footerLinksWrapIt{
+  display:flex;
+  flex-direction: column;
+  width:20%;
+  height:100%;
+  justify-content: flex-end;
+  align-items: center;
+
+}
+
+
+
+.footerMiddleWrapItContent1,.footerMiddleWrapItContent2,.footerMiddleWrapItContent3{
+color:black;
+
+}
+.footerMiddleWrapItContent1 a,.footerMiddleWrapItContent2 a,.footerMiddleWrapItContent3 a{
+  color:black;
+  text-decoration: none;
+  }
+
+.footerMiddleWrapItContent1:hover,.footerMiddleWrapItContent2:hover,.footerMiddleWrapItContent3:hover{
+  color: rgb(124, 126, 123); 
+  opacity: 0.6;
+ 
+}
+
+
+
+
+
+.footerLinksWrapIt{
+  display:flex;
+  flex-direction: column;
+  width:20%;
+  height:100%;
+}
+
+
+
+
+
+
+
+//margin-top for every column to control where it sits in the background
+//maybe add a line in between? 
+.columnOne, .columnFive{
+  margin-top:10em;
+}
+.columnTwo{
+  margin-top: 8.2em;
+}
+
+.columnFour{
+  margin-top: 8.2em;
+}
+.columnThree{
+  margin-top: 8.2em;
+}
+.athTechRow{
+  padding-top: 0.5em;
+}
+//'toggle dark mode' dropdown - currently not functional
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  background-color: rgba(146, 194, 152, 0.384);
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+.dropdown-content p{
+  display: inline;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}  
+.dropdownGear:hover .dropdown-content {
+  display: block;
+  height: 2.2em;
+}
+
+
+
+
+.footerRightsSContent div:first-child{
+  margin-bottom:15px;
+}
+
+
+
+.fixTheMonstrosity:first-child{
+  margin-bottom:15px;
+}
+
+
+
+
+.fixTheMonstrosity{
+  display:flex;
+  width:100%;
+  justify-content: flex-start;
+  align-items: center;
+}
+.fixTheMonstrosity div{
+ padding-left:10px;
+}
+.fixTheMonstrosity a{
+  display:flex;
+  width:100%;
+  color:black;
+  justify-content: flex-start;
+  align-items: center;
+  text-decoration: none;
+}
+
+.columnFive{
+  display:flex;
+  flex-direction: column;
+}
+
+.columnFive a:link{
+  color: black;
+  text-decoration: none;
+}
+.columnFive a:visited{
+  color: black;
+}
+//link formatting for the rest of the links to different parts of the website +quiz 
+.columnTwo a:link, .meetTheTeam a:link, .columnFour a:link, .columnThree a:link{
+  color: black;
+  text-decoration: none;
+ 
+}
+.columnTwo a:visited, .meetTheTeam a:visited, .columnFour a:visited,.columnThree a:visited{
+  color: black;
+  text-decoration: none;
+
+}
+.columnTwo a:hover, .meetTheTeam a:hover, .columnFour a:hover,.columnThree a:hover{
+  color: rgb(124, 126, 123); 
+  opacity: 0.6;
+ 
+}
+
+.columnTwo,.columnThree,.columnFour{
+  display:flex;
+  justify-content: center;
+}
+
+
+
+.dropdown-content i{
+  background-color: rgba(146, 194, 152, 0.384);
+  border:none;
+  cursor: pointer;
+  padding-right: 5px;
+}
+
+//
+
+.faq-content{
+ display: block;
+ position:relative;
+//    top: 15em;
+}
+.faq-content :first-child {
+  margin-top:0;
+}
+// responsiveness
+
+@media screen and (max-width: 65em) {
+
+  .footerMiddleWrapIt{
+      flex-direction: column;
+      width:initial;
+  }
+  .footerRightsS{
+      width:initial;
+      flex-grow:1;
+      align-items:flex-start;
+      padding-left:15px;
+  }
+
+  .footerLinksWrapIt {
+      width:initial;
+      flex-grow:1;
+      align-items:flex-end;
+      padding-right:15px;
+  }
+
+  #block-main-menu-about{
+      display: none;
+  }
+
+  #block-main-menu{
+      display: none;
+  }
+
+  .hamburger{
+      display: block;
+  }
+
+  .menu{
+      display:block;
+  }
+
+ 
+
+}
+
+
+@media screen and (max-width: 55em) {
+
+  .footer_wrapper{
+      flex-direction: column-reverse;
+      height:initial;
+  }
+  .footerMiddleWrapIt{
+ 
+  }
+
+  .footerRightsS{
+      padding-left: initial;
+      margin-top:2em;
+      order:-1;
+      align-items: center;
+      text-align: center;
+  }
+  
+  .footerMiddleWrapIt div{
+     margin-bottom:1em;
+     margin-top:2em;
+  }
+
+
+  .footerLinksWrapIt {
+      margin-top:2em;
+      margin-bottom:2em;
+    order:-1;
+    align-items: center;
+  }
+
+.fixTheMonstrosity a{
+  flex-direction: column;
+  text-align: center;
+  
+}
+
+.fixTheMonstrosity{
+  flex-direction: column;
+  text-align: center;
+}
+.fixTheMonstrosity i{
+ font-size:3em;
+ padding:1em;
+  
+}
+
+
+}
+
+
+
+
+@media screen and (max-width: 45em) {
+
+
+
+
+
+  .center-fit{
+      object-fit: cover;
+      object-position:43% 0%;
+  }
+      
+
+}
+
+
+//======================================till here there was the master.less....
+  
+
+
+
+
+
+
+
+#jjjjMiniGameIdentifier{
+  overflow-x:hidden ;
+
+}
+
+
+
+#jjjjMiniGameMain{
+  display:flex;
+  position:relative;
+  width:100%;
+  min-height:100vh;
+ background-color:rgb(242, 241, 235);
+ transform-style: preserve-3d;
+ background-image:url(images/Balasis/miniGame/qwer.jpeg);
+ background-size:100% 100%;
+
+}
+
+.jjjPerspectIt{
+  font-size:12px;
+display:flex;
+justify-content: center;
+margin-right:auto;
+margin-left:auto;
+align-self: flex-end;
+perspective: 15em;
+perspective-origin: 50% 100%;
+position:relative;
+
+}
+
+.jjjjcardItem{
+  transition:0.5s linear;
+  transform-style: preserve-3d;
+aspect-ratio: 3/4;
+min-width:12em ;
+
+margin-left:1em;
+margin-top:1em;
+margin-right:1em;
+margin-bottom:1em;
+border-radius: 3px 3px 3px 3px;
+
+animation-name:jjjhoverAnimation;
+animation-iteration-count: infinite;
+animation-duration:3s;
+cursor:pointer;
+box-shadow:0px 10px 11px 5px rgba(0,0,0,0.8);
+}
+
+@keyframes jjjhoverAnimation {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+.jjjcardItemRotated{
+  transform:rotateY(180deg);
+  pointer-events: none;
+}
+.jjjcardItemRotatedRemoved{
+opacity:0;
+}
+
+
+#jjjjCardTimer{
+  top:-7em;
+  position:absolute;
+  margin-left:auto;
+  margin-right:auto;
+  left:0;
+  right:0;
+  height:10em;
+  color:white;
+  text-align:center;
+  display:flex;
+  justify-content:center;
+  align-items: flex-end;
+  width:20em;
+  border-radius: 10px 10px 0px 0px;
+  border:0.5em solid rgb(77, 47, 12);
+  background-color:black;
+ // transform:translateZ(-0.1em);
+}
+
+
+#jjjjCardTimerText{
+color:white;
+font-size:5em;
+
+
+}
+
+
+#jjjjCardTimer::before{
+  content:"";
+position:absolute;
+top:-4em;
+bottom:-5em;
+left:-4em;
+right:-2em;
+background-image:url("images/Balasis/miniGame/tryThiss.png");
+background-repeat: no-repeat;
+background-size:100% 100%;
+}
+
+#jjjResetMiniGameTable{
+ background-color:rgb(237, 185, 67);
+ border-radius: 10px 10px 10px 10px;
+ padding:0.5em;
+  cursor:pointer;
+  margin-top:1em;
+}
+#jjjResetMiniGameTable:hover{
+  opacity:0.9;
+}
+#jjjjSTimeTable{
+  text-align: center;
+
+  
+}
+#jjjjTableFrame h1,
+#jjjjTableFrame h2,
+#jjjjTableFrame h3,
+#jjjjTableFrame h4,
+#jjjjTableFrame h5,
+#jjjjTableFrame h6 {
+  color:rgb(237, 185, 67);
+text-align: center;
+margin:1em;
+}
+#jjjjTableFrame{
+  top:50%;
+  left:50%;
+ 
+  display:none;
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  flex-direction: column;
+ 
+ 
+  transform: rotateX(5deg) translateZ(4.3em) translateX(-50%) translateY(-50%);
+  color:white;
+  font-size:2.5em;
+}
+
+#jjjjSTimeTable p{
+margin-bottom:0;
+margin-top:0.3em;
+}
+
+.jjjjcardHolder{
+  user-drag: none; 
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  background-image: url("images/Balasis/miniGame/woody.jpg");
+  background-size: 100% 100%;
+  padding:1em;
+  display:grid; 
+  grid-template-columns:repeat(6,1fr);   
+  align-items: center;
+  justify-items: center;
+  align-content: space-around;
+  justify-content: space-around;
+
+ 
+  
+  transform-origin:50% 100%;
+  transform:rotateX(5deg) translateZ(4.3em);
+  transform-style: preserve-3d;
+  transition:1s linear;
+  position:relative;
+  bottom:0;
+  border-radius: 10px 10px 10px 10px;
+  overflow:hidden;
+  animation-duration:2s;
+  animation-iteration-count: 1;
+}
+
+
+.jjjjcardHolderCorrect{
+animation-name:jjjjcardHolderCorrect;
+}
+.jjjjcardHolderFalse{
+  animation-name:jjjjcardHolderFalse;
+}
+
+@keyframes jjjjcardHolderCorrect{
+  0%  { box-shadow:0px 0px 10px 4px transparent}
+  50% { box-shadow:0px 0px 45px 14px rgb(175, 200, 173)}
+  100%{ box-shadow:0px 0px 10px 4px transparent}
+}
+
+
+
+@keyframes jjjjcardHolderFalse{
+  0%  { box-shadow:0px 0px 10px 4px transparent}
+  50% { box-shadow:0px 0px 45px 14px red}
+  100%{ box-shadow:0px 0px 10px 4px transparent}
+}
+
+
+
+
+
+
+
+.jjjcardItemBack{
+display:flex;
+flex-direction:column;
+height:100%;
+width:100%;
+background-image:url(images/Balasis/miniGame/logoNoBGHELP.png);
+background-repeat: no-repeat;
+background-position:center center;
+background-size:80% 80%;
+border: 5px solid pink;
+backface-visibility: hidden;
+position:absolute;
+top:0;
+left:0;
+right:0;
+bottom:0;
+transform:rotateY(0deg);
+//background-color: rgb(70,81,26);
+//background-color:@colorSand;
+}
+
+.jjjjcardItem:hover .jjjcardItemBack{
+  filter: brightness(120%); 
+ 
+
+ 
+   }
+
+ 
+
+
+
+.jjjcardItemFront{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+width:100%;
+  backface-visibility: hidden;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  transform-origin:center center;
+  transform:rotateY(-180deg);
+}
+
+
+
+
+
+
+
+#jjjShowMiniGame{
+  display:none;
+  width:5em;
+  justify-content: flex-start;
+  align-items: center;
+  position:absolute;
+  top:3.75em;
+  right:-1.5em;
+  font-size:3em;
+  background-image:url("images/Balasis/miniGame/woody.jpg");
+  color:white;
+  padding:0.3em;
+  padding-left:0.5em;
+  border-radius: 0px 0px 0px 10px;
+  cursor: pointer;
+  transition:500ms linear;
+
+
+}
+#jjjShowMiniGame:hover{
+  color:yellow;
+  right:0em;
+
+}
+#jjjScoresMiniGame{
+  display:flex;
+  width:5em;
+  justify-content: flex-start;
+  align-items: center;
+  position:absolute;
+  top:3.75em;
+  right:-1.5em;
+  font-size:3em;
+  background-image:url("images/Balasis/miniGame/woody.jpg");
+  color:white;
+  padding:0.3em;
+  padding-left:0.5em;
+  border-radius: 0px 0px 0px 10px;
+  cursor: pointer;
+  transition:500ms linear;
+  z-index:10;
+
+}
+#jjjScoresMiniGame:hover{
+  color:yellow;
+  right:0em;
+
+}
+
+
+
+
+
+
+
+#jjjResetMiniGame{
+  display:flex;
+  width:5em;
+  justify-content: flex-start;
+  align-items: center;
+  position:absolute;
+  top:2em;
+  right:-1.5em;
+  font-size:3em;
+  background-image:url("images/Balasis/miniGame/woody.jpg");
+  color:white;
+  padding:0.3em;
+  padding-left:0.5em;
+  border-radius: 10px 0px 0px 0px;
+  cursor: pointer;
+  transition:500ms linear;
+}
+
+#jjjResetMiniGame:hover{
+color:yellow;
+right:0em;
+}
+
+.jjjjcardHolder:hover{
+
+
+}
+.jjjFinalGrass{
+
+
+
+}
+
+
+.Empusidae .jjjcardItemFront{
+  background-image:url(images/Balasis/miniGame/Empusidae.jpg);
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+
+}
+
+.Mantidae .jjjcardItemFront{
+  background-image:url(images/Balasis/miniGame/Mantidae.jpg);
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+
+.Phyllocranidae .jjjcardItemFront{
+  background-image:url(images/Balasis/miniGame/Phyllocranidae.jpg);
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+.Beauty .jjjcardItemFront{
+  background-image:url(images/Balasis/miniGame/Beauty.jpg);
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+.AquaMantis .jjjcardItemFront{
+  background-image:url(images/Balasis/miniGame/AquaMantis.jpg);
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+.funnySayings .jjjcardItemFront{
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (min-width:165em){
+  .jjjjcardItem{
+
+      min-width:15.5em;
+      margin-left:1em;
+      margin-top:1em;
+      margin-right:1em;
+      margin-bottom:1em;
+      
+  }
+  #jjjjCardTimer{
+      top:0em;
+  
+      height:8em;
+     
+      width:20em;
+      border:0.5em solid rgb(77, 47, 12);
+   
+  }
+  
+  
+  #jjjjCardTimerText{
+  color:white;
+  font-size:5em;
+  
+  
+  }
+  
+  
+  #jjjjCardTimer::before{
+      content:"";
+  position:absolute;
+  top:-3em;
+  bottom:-5em;
+  left:-4em;
+  right:-2em;
+  
+  }
+
+
+
+
+
+}
+
+@media screen and (min-width:225em){
+  .jjjjcardItem{
+      min-width:20em;
+      margin-left:2em;
+      margin-top:2em;
+      margin-right:2em;
+      margin-bottom:2em;
+  }
+    
+#jjjjCardTimer{
+  top:10em;
+
+  height:10em;
+ 
+  width:20em;
+  border:0.5em solid rgb(77, 47, 12);
+
+}
+
+
+#jjjjCardTimerText{
+color:white;
+font-size:5em;
+
+
+}
+
+
+#jjjjCardTimer::before{
+  content:"";
+position:absolute;
+top:-3em;
+bottom:-5em;
+left:-4em;
+right:-2em;
+
+}
+
+}
+
+@media screen and (max-width:85em){
+  .jjjjcardItem{
+      
+      min-width:9.5em;
+      margin-left:0.4em;
+      margin-top:0.4em;
+      margin-right:0.4em;
+      margin-bottom:0.4em;
+  }
+  #jjjResetMiniGame{
+      top:0em;
+  }
+  #jjjShowMiniGame{top:1.7em;}
+      #jjjScoresMiniGame{ top:1.7em;}
+
+
+  .jjjPerspectIt{
+      margin-top:21em;
+
+  }
+  #jjjjTableFrame{
+      font-size:2.5em;
+
+  }
+  
+#jjjjCardTimer{
+  top:-8em;
+
+  height:7em;
+ 
+  width:20em;
+  border:0.5em solid rgb(77, 47, 12);
+
+}
+
+
+#jjjjCardTimerText{
+color:white;
+font-size:5em;
+
+
+}
+
+
+#jjjjCardTimer::before{
+  content:"";
+position:absolute;
+top:-3em;
+bottom:-5em;
+left:-4em;
+right:-2em;
+
+}
+
+
+}
+
+@media screen and (max-width:75em){
+  .jjjjcardItem{
+      min-width:6.5em;
+      margin-left:0.3em;
+      margin-top:0.3em;
+      margin-right:0.3em;
+      margin-bottom:0.3em;
+  }
+  .jjjPerspectIt{
+      margin-top:21em;
+
+  }
+
+  #jjjjCardTimer{
+      top:-10em;
+  
+      height:8em;
+     
+      width:20em;
+      border:0.5em solid rgb(77, 47, 12);
+   
+  }
+  
+  
+  #jjjjCardTimerText{
+  color:white;
+  font-size:5em;
+  
+  
+  }
+  
+  
+  #jjjjCardTimer::before{
+      content:"";
+  position:absolute;
+  top:-3em;
+  bottom:-5em;
+  left:-4em;
+  right:-2em;
+  
+  }
+
+
+}
+
+
+
+
+@media screen and (max-width:60em){
+  .jjjjcardItem{
+      min-width:7em;
+      margin-left:0.4em;
+      margin-top:0.4em;
+      margin-right:0.4em;
+      margin-bottom:0.4em;
+  }
+  .jjjPerspectIt{
+      margin-top:21em;
+
+  }
+
+}
+
+
+
+
+@media screen and (max-width:45em){
+  .jjjjcardItem{
+      min-width:6em;
+      margin-left:0.4em;
+      margin-top:0.4em;
+      margin-right:0.4em;
+      margin-bottom:0.4em;
+
+  }
+  .jjjjcardHolder{
+      grid-template-columns:repeat(3,1fr);   
+
+  }
+  .jjjPerspectIt{
+      margin-top:21em;
+      font-size:10px;
+  }
+  #jjjjTableFrame{
+      font-size:1.7em;
+  }
+  #jjjjCardTimer{
+      top:-8em;
+      position:absolute;
+      margin-left:auto;
+      margin-right:auto;
+      left:0;
+      right:0;
+      height:10em;
+     
+  }
+  
+  
+  #jjjjCardTimerText{
+  color:white;
+  font-size:5em;
+  
+  
+  }
+  
+  
+  #jjjjCardTimer::before{
+      content:"";
+  position:absolute;
+  top:-4em;
+  bottom:-5em;
+  left:-2em;
+  right:-1.9em;
+  background-image:url("images/Balasis/miniGame/tryThiss.png");
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+  }
+
+
+
+
+
+}
