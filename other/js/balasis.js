@@ -7,11 +7,7 @@
         if (document.getElementById('jjjjMiniGameIdentifier') !== null){         
        
        
-       function jjjjGameSetUp(){
-       
-       
-       
-       
+       function jjjjGameSetUp(){ 
        // here I just declare a variable for all the cards and also set a starting array that holds the elements that I want to dispaly in them...
        // as you see its 3 times the same ....
        let jjjjcardItem=document.getElementsByClassName("jjjjcardItem");
