@@ -1,3 +1,12 @@
+/*
+-Variables :Turned the RGB colors into variables
+-Nesting  :Turned
+
+
+
+
+
+*/
 html {
   height: 100%;
   width: 100%;
@@ -135,12 +144,7 @@ body {
   text-align: center;
 }
 
-#jjjjTableFrame h1,
-#jjjjTableFrame h2,
-#jjjjTableFrame h3,
-#jjjjTableFrame h4,
-#jjjjTableFrame h5,
-#jjjjTableFrame h6 {
+#jjjjTableFrame h1, #jjjjTableFrame h2, #jjjjTableFrame h3, #jjjjTableFrame h4, #jjjjTableFrame h5, #jjjjTableFrame h6 {
   color: rgb(237, 185, 67);
   text-align: center;
   margin: 1em;
