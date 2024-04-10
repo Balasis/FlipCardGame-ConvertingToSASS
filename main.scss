@@ -7,13 +7,14 @@
   -partials and modules :passed colors into another file _colors.scss
   -Mixin : used to apply the same code in %nameOfCard% .jjjcardItemFront
   -extend/Inheritance : used to apply reusable code in some ::hovers (%colorAndRightOnHovers-shared)
-  
+  -operators: just a dummy math.div in #jjjjMiniGameMain that sets the width(demonstration only)
   */
  
 @use './other/scss/colors';
 @use './other/scss/basicPageCss';
+@use "sass:math";
 
-
+$percentageJustForDemonstration:200;
 
 #jjjjMiniGameIdentifier{
   overflow-x:hidden ;
@@ -22,7 +23,7 @@
 #jjjjMiniGameMain{
   display:flex;
   position:relative;
-  width:100%;
+  width: math.div($percentageJustForDemonstration,2) * 1%; //operator
   min-height:100vh;
   background-color:colors.$extremeLightYellow;
   transform-style: preserve-3d;

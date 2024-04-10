@@ -4,7 +4,7 @@
 -partials and modules :passed colors into another file _colors.scss
 -Mixin : used to apply the same code in %nameOfCard% .jjjcardItemFront
 -extend/Inheritance : used to apply reusable code in some ::hovers (%colorAndRightOnHovers-shared)
-
+-operators: just a dummy math.div in #jjjjMiniGameMain that sets the width(demonstration only)
 */
 html {
   height: 100%;
