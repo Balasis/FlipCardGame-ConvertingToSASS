@@ -6,32 +6,11 @@
   -Nesting  :Turned jjjjTableFrame h1 e.t.c into a nested form
   -partials and modules :passed colors into another file _colors.scss
   */
-
+ 
 @use './other/scss/colors';
+@use './other/scss/basicPageCss';
 
-html{
-  height:100%;
-  width:100%;
-  overflow-x: hidden;
-}
 
-html,body{
-  padding:0;
-  margin:0;
-}
-
-*{
-  box-sizing: border-box;
-}
-
-body{
-  min-height:100%;
-  background-color:colors.$extremeLightYellow;
-  position: relative;
-  background-color:colors.$extremeLightYellow;
-  font-family: 'Montserrat';
-  overflow-x:hidden;
-}
 
 #jjjjMiniGameIdentifier{
   overflow-x:hidden ;
