@@ -3,6 +3,8 @@
 -Nesting  :Turned jjjjTableFrame h1 e.t.c into a nested form
 -partials and modules :passed colors into another file _colors.scss
 -Mixin : used to apply the same code in %nameOfCard% .jjjcardItemFront
+-extend/Inheritance : used to apply reusable code in some ::hovers (%colorAndRightOnHovers-shared)
+
 */
 html {
   height: 100%;
@@ -279,7 +281,7 @@ body {
   transition: 500ms linear;
 }
 
-#jjjShowMiniGame:hover {
+#jjjResetMiniGame:hover, #jjjScoresMiniGame:hover, #jjjShowMiniGame:hover {
   color: yellow;
   right: 0em;
 }
@@ -303,11 +305,6 @@ body {
   z-index: 10;
 }
 
-#jjjScoresMiniGame:hover {
-  color: yellow;
-  right: 0em;
-}
-
 #jjjResetMiniGame {
   display: flex;
   width: 5em;
@@ -324,11 +321,6 @@ body {
   border-radius: 10px 0px 0px 0px;
   cursor: pointer;
   transition: 500ms linear;
-}
-
-#jjjResetMiniGame:hover {
-  color: yellow;
-  right: 0em;
 }
 
 .Empusidae .jjjcardItemFront {

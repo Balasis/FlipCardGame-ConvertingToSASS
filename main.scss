@@ -6,6 +6,8 @@
   -Nesting  :Turned jjjjTableFrame h1 e.t.c into a nested form
   -partials and modules :passed colors into another file _colors.scss
   -Mixin : used to apply the same code in %nameOfCard% .jjjcardItemFront
+  -extend/Inheritance : used to apply reusable code in some ::hovers (%colorAndRightOnHovers-shared)
+  
   */
  
 @use './other/scss/colors';
@@ -258,10 +260,14 @@ animation-name:jjjjcardHolderCorrect;
   transition:500ms linear;
 }
 
-#jjjShowMiniGame:hover{
+//shareable to apply extend/inheritance
+%colorAndRightOnHovers-shared {
   color:yellow;
   right:0em;
+}
 
+#jjjShowMiniGame:hover{
+@extend %colorAndRightOnHovers-shared;
 }
 
 #jjjScoresMiniGame{
@@ -284,9 +290,7 @@ animation-name:jjjjcardHolderCorrect;
 }
 
 #jjjScoresMiniGame:hover{
-  color:yellow;
-  right:0em;
-
+  @extend %colorAndRightOnHovers-shared;
 }
 
 #jjjResetMiniGame{
@@ -308,8 +312,7 @@ animation-name:jjjjcardHolderCorrect;
 }
 
 #jjjResetMiniGame:hover{
-  color:yellow;
-  right:0em;
+  @extend %colorAndRightOnHovers-shared;
 }
 
 //===========================================MIXIN 
