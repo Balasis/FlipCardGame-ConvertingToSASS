@@ -3,19 +3,11 @@
   //What I've applied so far:
   /*
   -Variables :Turned the RGB colors into variables
-  -Nesting  :Turned
-
-
-
-
-
+  -Nesting  :Turned jjjjTableFrame h1 e.t.c into a nested form
+  -partials and modules :passed colors into another file _colors.scss
   */
 
-    //Color variables
-    $lightGreen:rgb(175, 200, 173);
-    $extremeLightYellow:rgb(242, 241, 235);
-    $darkBrown:rgb(77, 47, 12);
-    $lightOrange:rgb(237, 185, 67);
+@use './other/scss/colors';
 
 html{
   height:100%;
@@ -34,9 +26,9 @@ html,body{
 
 body{
   min-height:100%;
-  background-color: $extremeLightYellow;
+  background-color:colors.$extremeLightYellow;
   position: relative;
-  background-color: $extremeLightYellow;
+  background-color:colors.$extremeLightYellow;
   font-family: 'Montserrat';
   overflow-x:hidden;
 }
@@ -50,7 +42,7 @@ body{
   position:relative;
   width:100%;
   min-height:100vh;
-  background-color:$extremeLightYellow;
+  background-color:colors.$extremeLightYellow;
   transform-style: preserve-3d;
   background-image:url(images/Balasis/miniGame/qwer.jpeg);
   background-size:100% 100%;
@@ -119,7 +111,7 @@ body{
   align-items: flex-end;
   width:20em;
   border-radius: 10px 10px 0px 0px;
-  border:0.5em solid $darkBrown;
+  border:0.5em solid colors.$darkBrown;
   background-color:black;
 }
 
@@ -141,7 +133,7 @@ body{
 }
 
 #jjjResetMiniGameTable{
-  background-color:$lightOrange;
+  background-color:colors.$lightOrange;
   border-radius: 10px 10px 10px 10px;
   padding:0.5em;
   cursor:pointer;
@@ -156,10 +148,10 @@ body{
   text-align: center;
 }
 
- //Nested
+//Nested
 #jjjjTableFrame {
   h1,h2,h3,h4,h5,h6 {
-    color:$lightOrange;
+    color:colors.$lightOrange;
     text-align: center;
     margin:1em;
   }
@@ -211,7 +203,6 @@ body{
   animation-iteration-count: 1;
 }
 
-
 .jjjjcardHolderCorrect{
 animation-name:jjjjcardHolderCorrect;
 }
@@ -221,23 +212,15 @@ animation-name:jjjjcardHolderCorrect;
 
 @keyframes jjjjcardHolderCorrect{
   0%  { box-shadow:0px 0px 10px 4px transparent}
-  50% { box-shadow:0px 0px 45px 14px $lightGreen}
+  50% { box-shadow:0px 0px 45px 14px colors.$lightGreen}
   100%{ box-shadow:0px 0px 10px 4px transparent}
 }
-
-
 
 @keyframes jjjjcardHolderFalse{
   0%  { box-shadow:0px 0px 10px 4px transparent}
   50% { box-shadow:0px 0px 45px 14px red}
   100%{ box-shadow:0px 0px 10px 4px transparent}
 }
-
-
-
-
-
-
 
 .jjjcardItemBack{
   display:flex;
@@ -397,7 +380,7 @@ animation-name:jjjjcardHolderCorrect;
     top:0em;  
     height:8em;     
     width:20em;
-    border:0.5em solid $darkBrown;   
+    border:0.5em solid colors.$darkBrown;   
   }
 
   #jjjjCardTimerText{
@@ -429,7 +412,7 @@ animation-name:jjjjcardHolderCorrect;
     top:10em;
     height:10em; 
     width:20em;
-    border:0.5em solid $darkBrown;
+    border:0.5em solid colors.$darkBrown;
   }
   
   #jjjjCardTimerText{
@@ -482,7 +465,7 @@ animation-name:jjjjcardHolderCorrect;
     top:-8em;
     height:7em; 
     width:20em;
-    border:0.5em solid $darkBrown;
+    border:0.5em solid colors.$darkBrown;
   }
 
   #jjjjCardTimerText{
@@ -519,7 +502,7 @@ animation-name:jjjjcardHolderCorrect;
     top:-10em;  
     height:8em;     
     width:20em;
-    border:0.5em solid $darkBrown;   
+    border:0.5em solid colors.$darkBrown;   
   }
 
   #jjjjCardTimerText{

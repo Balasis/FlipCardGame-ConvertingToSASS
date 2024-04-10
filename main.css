@@ -1,11 +1,7 @@
 /*
 -Variables :Turned the RGB colors into variables
--Nesting  :Turned
-
-
-
-
-
+-Nesting  :Turned jjjjTableFrame h1 e.t.c into a nested form
+-partials and modules :passed colors into another file _colors.scss
 */
 html {
   height: 100%;
