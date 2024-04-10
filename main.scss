@@ -5,6 +5,7 @@
   -Variables :Turned the RGB colors into variables
   -Nesting  :Turned jjjjTableFrame h1 e.t.c into a nested form
   -partials and modules :passed colors into another file _colors.scss
+  -Mixin : used to apply the same code in %nameOfCard% .jjjcardItemFront
   */
  
 @use './other/scss/colors';
@@ -311,34 +312,32 @@ animation-name:jjjjcardHolderCorrect;
   right:0em;
 }
 
-.Empusidae .jjjcardItemFront{
-  background-image:url(images/Balasis/miniGame/Empusidae.jpg);
+//===========================================MIXIN 
+@mixin backgroundProperties($url:"images/Balasis/miniGame/Default.jpg"){
+  background-image:url($url);
   background-repeat: no-repeat;
   background-size:100% 100%;
+}
+
+
+.Empusidae .jjjcardItemFront{
+  @include backgroundProperties($url:"images/Balasis/miniGame/Empusidae.jpg");
 }
 
 .Mantidae .jjjcardItemFront{
-  background-image:url(images/Balasis/miniGame/Mantidae.jpg);
-  background-repeat: no-repeat;
-  background-size:100% 100%;
+  @include backgroundProperties($url:"images/Balasis/miniGame/Mantidae.jpg");
 }
 
 .Phyllocranidae .jjjcardItemFront{
-  background-image:url(images/Balasis/miniGame/Phyllocranidae.jpg);
-  background-repeat: no-repeat;
-  background-size:100% 100%;
+  @include backgroundProperties($url:"images/Balasis/miniGame/Phyllocranidae.jpg");
 }
 
 .Beauty .jjjcardItemFront{
-  background-image:url(images/Balasis/miniGame/Beauty.jpg);
-  background-repeat: no-repeat;
-  background-size:100% 100%;
+  @include backgroundProperties($url:"images/Balasis/miniGame/Beauty.jpg");
 }
 
 .AquaMantis .jjjcardItemFront{
-  background-image:url(images/Balasis/miniGame/AquaMantis.jpg);
-  background-repeat: no-repeat;
-  background-size:100% 100%;
+  @include backgroundProperties($url:"images/Balasis/miniGame/AquaMantis.jpg");
 }
 
 .funnySayings .jjjcardItemFront{
