@@ -13,8 +13,7 @@ Be aware that even in comments you cant write the hash symbol...
   -the "if" statement : used in jjjjMiniGameIdentifier (with dummy variable for testing);
   -the css variables are parsed as they are except if they are used in interpolation (hash{});
       otherwise like you see in the example below (SomeConsumedVariableNoHash) it sees the variable($testingTheIf) as a String
-      
-  -
+  -Parent selectors : used in all the hovers to present it as somehow nested
   */
  
 @use './other/scss/colors';
@@ -112,23 +111,22 @@ $testingTheIf:false;
   border-radius: 10px 10px 0px 0px;
   border:0.5em solid colors.$darkBrown;
   background-color:black;
+    &::before{
+      content:"";
+      position:absolute;
+      top:-4em;
+      bottom:-5em;
+      left:-4em;
+      right:-2em;
+      background-image:url("images/Balasis/miniGame/tryThiss.png");
+      background-repeat: no-repeat;
+      background-size:100% 100%;
+    }
 }
 
 #jjjjCardTimerText{
   color:white;
   font-size:5em;
-}
-
-#jjjjCardTimer::before{
-  content:"";
-  position:absolute;
-  top:-4em;
-  bottom:-5em;
-  left:-4em;
-  right:-2em;
-  background-image:url("images/Balasis/miniGame/tryThiss.png");
-  background-repeat: no-repeat;
-  background-size:100% 100%;
 }
 
 #jjjResetMiniGameTable{
@@ -137,10 +135,9 @@ $testingTheIf:false;
   padding:0.5em;
   cursor:pointer;
   margin-top:1em;
-}
-
-#jjjResetMiniGameTable:hover{
-  opacity:0.9;
+  &jjjResetMiniGameTable:hover{
+    opacity:0.9;
+  }
 }
 
 #jjjjSTimeTable{
@@ -310,11 +307,13 @@ animation-name:jjjjcardHolderCorrect;
   cursor: pointer;
   transition:500ms linear;
   z-index:10;
+
+  &:hover{
+    @extend %colorAndRightOnHovers-shared;
+  }
 }
 
-#jjjScoresMiniGame:hover{
-  @extend %colorAndRightOnHovers-shared;
-}
+
 
 #jjjResetMiniGame{
   display:flex;
@@ -332,11 +331,11 @@ animation-name:jjjjcardHolderCorrect;
   border-radius: 10px 0px 0px 0px;
   cursor: pointer;
   transition:500ms linear;
+  &:hover{
+    @extend %colorAndRightOnHovers-shared;
+  }
 }
 
-#jjjResetMiniGame:hover{
-  @extend %colorAndRightOnHovers-shared;
-}
 
 //===========================================MIXIN 
 @mixin backgroundProperties($url){
@@ -381,25 +380,24 @@ animation-name:jjjjcardHolderCorrect;
   }
 
   #jjjjCardTimer{
-    top:0em;  
+    top:0em;
     height:8em;     
     width:20em;
-    border:0.5em solid colors.$darkBrown;   
+    border:0.5em solid colors.$darkBrown;  
+      & ::before{
+        content:"";
+        position:absolute;
+        top:-3em;
+        bottom:-5em;
+        left:-4em;
+        right:-2em;
+      }
   }
 
   #jjjjCardTimerText{
     color:white;
     font-size:5em;
   } 
-
-  #jjjjCardTimer::before{
-    content:"";
-    position:absolute;
-    top:-3em;
-    bottom:-5em;
-    left:-4em;
-    right:-2em;
-  }
 }
 
 @media screen and (min-width:225em){
@@ -417,20 +415,19 @@ animation-name:jjjjcardHolderCorrect;
     height:10em; 
     width:20em;
     border:0.5em solid colors.$darkBrown;
+      &::before{
+        content:"";
+        position:absolute;
+        top:-3em;
+        bottom:-5em;
+        left:-4em;
+        right:-2em;
+      }
   }
   
   #jjjjCardTimerText{
     color:white;
     font-size:5em;
-  }
-
-  #jjjjCardTimer::before{
-    content:"";
-    position:absolute;
-    top:-3em;
-    bottom:-5em;
-    left:-4em;
-    right:-2em;
   }
 
 }
@@ -470,20 +467,19 @@ animation-name:jjjjcardHolderCorrect;
     height:7em; 
     width:20em;
     border:0.5em solid colors.$darkBrown;
+      &::before{
+        content:"";
+        position:absolute;
+        top:-3em;
+        bottom:-5em;
+        left:-4em;
+        right:-2em;
+      }
   }
 
   #jjjjCardTimerText{
     color:white;
     font-size:5em;
-  }
-
-  #jjjjCardTimer::before{
-    content:"";
-    position:absolute;
-    top:-3em;
-    bottom:-5em;
-    left:-4em;
-    right:-2em;
   }
 
 }
@@ -506,21 +502,20 @@ animation-name:jjjjcardHolderCorrect;
     top:-10em;  
     height:8em;     
     width:20em;
-    border:0.5em solid colors.$darkBrown;   
+    border:0.5em solid colors.$darkBrown;
+      &::before{
+        content:"";
+          position:absolute;
+          top:-3em;
+          bottom:-5em;
+          left:-4em;
+          right:-2em;  
+        }
   }
 
   #jjjjCardTimerText{
     color:white;
     font-size:5em;
-  }
-
-  #jjjjCardTimer::before{
-  content:"";
-    position:absolute;
-    top:-3em;
-    bottom:-5em;
-    left:-4em;
-    right:-2em;  
   }
 
 }
@@ -571,24 +566,23 @@ animation-name:jjjjcardHolderCorrect;
     margin-right:auto;
     left:0;
     right:0;
-    height:10em;     
-  }  
+    height:10em;
+      &::before{
+        content:"";
+        position:absolute;
+        top:-4em;
+        bottom:-5em;
+        left:-2em;
+        right:-1.9em;
+        background-image:url("images/Balasis/miniGame/tryThiss.png");
+        background-repeat: no-repeat;
+        background-size:100% 100%;
+      }  
+  }
   
   #jjjjCardTimerText{
     color:white;
     font-size:5em;
-  }  
-  
-  #jjjjCardTimer::before{
-    content:"";
-    position:absolute;
-    top:-4em;
-    bottom:-5em;
-    left:-2em;
-    right:-1.9em;
-    background-image:url("images/Balasis/miniGame/tryThiss.png");
-    background-repeat: no-repeat;
-    background-size:100% 100%;
   }
 
 }
