@@ -14,12 +14,16 @@ Be aware that even in comments you cant write the hash symbol...
   -the css variables are parsed as they are except if they are used in interpolation (hash{});
       otherwise like you see in the example below (SomeConsumedVariableNoHash) it sees the variable($testingTheIf) as a String
   -Parent selectors : used in all the hovers to present it as somehow nested
+  -Placeholder: adding &:hover in the placeholder % would cause the extended class to inherit the hover too(check  placeholderTest)
+  -use of forward : used "useTheForward.scss" for it and I forwarded the main .scss(logically should be
+    the other way around but for testing its ok );
+  -
   */
  
 @use './other/scss/colors';
 @use './other/scss/basicPageCss';
 @use "sass:math";
-
+@forward "useTheForward.scss";
 $percentageJustForDemonstration:200;
 $testingTheIf:false;
 
@@ -129,15 +133,19 @@ $testingTheIf:false;
   font-size:5em;
 }
 
-#jjjResetMiniGameTable{
+%placeholderTest{
   background-color:colors.$lightOrange;
   border-radius: 10px 10px 10px 10px;
   padding:0.5em;
   cursor:pointer;
   margin-top:1em;
-  &jjjResetMiniGameTable:hover{
+  &:hover{
     opacity:0.9;
   }
+}
+
+#jjjResetMiniGameTable{
+  @extend %placeholderTest;  
 }
 
 #jjjjSTimeTable{
