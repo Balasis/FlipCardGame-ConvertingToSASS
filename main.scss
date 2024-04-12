@@ -17,7 +17,8 @@ Be aware that even in comments you cant write the hash symbol...
   -Placeholder: adding &:hover in the placeholder % would cause the extended class to inherit the hover too(check  placeholderTest)
   -use of forward : used "useTheForward.scss" for it and I forwarded the main .scss(logically should be
     the other way around but for testing its ok );
-  -
+  -functions : used in jjjShowMiniGame with a dummy function (just a sum)
+  -to be continue with build in modules....
   */
  
 @use './other/scss/colors';
@@ -270,9 +271,14 @@ animation-name:jjjjcardHolderCorrect;
   transform:rotateY(-180deg);
 }
 
+@function testingFunction($aNumber,$aSecondNumber){
+  $sumResult:$aNumber+$aSecondNumber;
+  @return $sumResult;
+}
+
 #jjjShowMiniGame{
   display:none;
-  width:5em;
+  width:testingFunction(2,3)+"em";
   justify-content: flex-start;
   align-items: center;
   position:absolute;
