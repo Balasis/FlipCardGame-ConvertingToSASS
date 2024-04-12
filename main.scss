@@ -1,6 +1,6 @@
 /*!This is an attempt to transform the regular css into SCSS code for practice 
 by applying the capabilities shown in the scss website, one by one
-
+Be aware that even in comments you cant write the hash symbol...
   What I've applied so far:
   -comments : adding "!" in order to pass the  compile
   -Variables :Turned the RGB colors into variables
@@ -9,9 +9,12 @@ by applying the capabilities shown in the scss website, one by one
   -Mixin : used to apply the same code in %nameOfCard% .jjjcardItemFront
   -extend/Inheritance : used in some ::hovers ( %colorAndRightOnHovers-shared) note the "%" and "extend"
   -operators: just a dummy math.div in #jjjjMiniGameMain that sets the width(demonstration only)
-  -interpolation with @each  : used in  "backgroundProperties" be aware it uses include 
+  -interpolation with @each  : used in  "backgroundProperties" ,uses "include", uses "hash{} to pass string as css code
   -the "if" statement : used in jjjjMiniGameIdentifier (with dummy variable for testing);
-
+  -the css variables are parsed as they are except if they are used in interpolation (hash{});
+      otherwise like you see in the example below (SomeConsumedVariableNoHash) it sees the variable($testingTheIf) as a String
+      
+  -
   */
  
 @use './other/scss/colors';
@@ -20,9 +23,12 @@ by applying the capabilities shown in the scss website, one by one
 
 $percentageJustForDemonstration:200;
 $testingTheIf:false;
+
 #jjjjMiniGameIdentifier{
   overflow-x:hidden ;
   display:if($testingTheIf,none,block);
+  --variableExample:#{$testingTheIf};
+  --SomeConsumedVariableNoHash:$testingTheIf;//Does not see it as variable but rather as a string :" $testingTheIf "
 }
 
 #jjjjMiniGameMain{
