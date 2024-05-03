@@ -417,6 +417,12 @@ body {
   }
 }
 @media screen and (min-width: 225em) {
+  #jjjResetMiniGame {
+    transform: scaleX(2);
+  }
+  #jjjScoresMiniGame {
+    transform: scaleX(2);
+  }
   .jjjjcardItem {
     min-width: 20em;
     margin-left: 2em;
