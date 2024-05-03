@@ -41,6 +41,16 @@ Be aware that even in comments you cant write the hash symbol...
 @use './other/scss/basicPageCss';
 @use "sass:math";
 @forward "useTheForward.scss";
+
+@mixin display_FlexDir_Position($display,$FlexDir,$Position){
+  display:$display;
+  flex-direction: $FlexDir;
+  position: $Position;
+}
+
+
+
+
 $percentageJustForDemonstration:200;
 $testingTheIf:false;
 
@@ -271,7 +281,7 @@ animation-name:jjjjcardHolderCorrect;
     position:center center;
     size:80% 80%;
   }
-  
+
   border: 5px solid pink;
   backface-visibility: hidden;
   position:absolute;
