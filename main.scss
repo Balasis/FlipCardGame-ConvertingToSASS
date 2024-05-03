@@ -310,7 +310,9 @@ animation-name:jjjjcardHolderCorrect;
 
 #jjjShowMiniGame{
   display:none;
-  width:testingFunction(2,3)+"em";
+ 
+  // width:5em;
+   width:testingFunction(2,3)+em;
   justify-content: flex-start;
   align-items: center;
   position:absolute;
@@ -446,12 +448,20 @@ animation-name:jjjjcardHolderCorrect;
   } 
 }
 
+
 @media screen and (min-width:225em){
   #jjjResetMiniGame{
     transform: scaleX(2);
+    margin-right:2em;
   }
   #jjjScoresMiniGame{
     transform: scaleX(2);
+    margin-right:2em;
+  }
+
+  #jjjShowMiniGame{
+    transform: scaleX(2);
+    margin-right:2em;
   }
 
   .jjjjcardItem{

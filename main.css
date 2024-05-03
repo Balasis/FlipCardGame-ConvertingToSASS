@@ -298,7 +298,7 @@ body {
 
 #jjjShowMiniGame {
   display: none;
-  width: "5em";
+  width: 5em;
   justify-content: flex-start;
   align-items: center;
   position: absolute;
@@ -419,9 +419,15 @@ body {
 @media screen and (min-width: 225em) {
   #jjjResetMiniGame {
     transform: scaleX(2);
+    margin-right: 2em;
   }
   #jjjScoresMiniGame {
     transform: scaleX(2);
+    margin-right: 2em;
+  }
+  #jjjShowMiniGame {
+    transform: scaleX(2);
+    margin-right: 2em;
   }
   .jjjjcardItem {
     min-width: 20em;
