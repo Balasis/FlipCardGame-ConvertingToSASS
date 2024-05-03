@@ -1,23 +1,40 @@
 /*!This is an attempt to transform the regular css into SCSS code for practice 
 by applying the capabilities shown in the scss website, one by one
 Be aware that even in comments you cant write the hash symbol...
+
   What I've applied so far:
   -comments : adding "!" in order to pass the  compile
+
   -Variables :Turned the RGB colors into variables
+
   -Nesting  :used at jjjjTableFrame h1  Note that you can use it also as margin{ bottom:value; top:value; }(mind the space)
+
   -partials and modules :passed colors into another file _colors.scss
+
   -Mixin : used to apply the same code in %nameOfCard% .jjjcardItemFront
+
   -extend/Inheritance : used in some ::hovers ( %colorAndRightOnHovers-shared) note the "%" and "extend"
+
   -operators: just a dummy math.div in #jjjjMiniGameMain that sets the width(demonstration only)
+
   -interpolation with @each  : used in  "backgroundProperties" ,uses "include", uses "hash{} to pass string as css code
+
   -the "if" statement : used in jjjjMiniGameIdentifier (with dummy variable for testing);
+
   -the css variables are parsed as they are except if they are used in interpolation (hash{});
+
       otherwise like you see in the example below (SomeConsumedVariableNoHash) it sees the variable($testingTheIf) as a String
   -Parent selectors : used in all the hovers to present it as somehow nested
+
   -Placeholder: adding &:hover in the placeholder % would cause the extended class to inherit the hover too(check  placeholderTest)
+
   -use of forward : used "useTheForward.scss" for it and I forwarded the main .scss(logically should be
     the other way around but for testing its ok );
-  -
+
+  -functions : used in jjjShowMiniGame with a dummy function (just a sum)
+
+  -to be continue with build in modules....
+
   */
 html {
   height: 100%;
@@ -30,10 +47,6 @@ html, body {
   margin: 0;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 body {
   min-height: 100%;
   background-color: rgb(242, 241, 235);
@@ -41,6 +54,10 @@ body {
   background-color: rgb(242, 241, 235);
   font-family: "Montserrat";
   overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 #jjjjMiniGameIdentifier {
@@ -281,7 +298,7 @@ body {
 
 #jjjShowMiniGame {
   display: none;
-  width: 5em;
+  width: "5em";
   justify-content: flex-start;
   align-items: center;
   position: absolute;
