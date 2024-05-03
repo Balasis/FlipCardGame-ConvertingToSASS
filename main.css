@@ -68,9 +68,8 @@ body {
 }
 
 #jjjjMiniGameMain {
-  display: "flex";
-  flex-direction: "initial";
-  position: "relative";
+  display: flex;
+  position: relative;
   width: 100%;
   min-height: 100vh;
   background-color: rgb(242, 241, 235);
@@ -80,16 +79,15 @@ body {
 }
 
 .jjjPerspectIt {
-  display: "flex";
-  flex-direction: "initial";
-  position: "relative";
   font-size: 12px;
+  display: flex;
   justify-content: center;
   margin-right: auto;
   margin-left: auto;
   align-self: flex-end;
   perspective: 15em;
   perspective-origin: 50% 100%;
+  position: relative;
 }
 
 .jjjjcardItem {
@@ -127,10 +125,8 @@ body {
 }
 
 #jjjjCardTimer {
-  display: "flex";
-  flex-direction: "initial";
-  position: "absolute";
   top: -7em;
+  position: absolute;
   margin-left: auto;
   margin-right: auto;
   left: 0;
@@ -138,6 +134,7 @@ body {
   height: 10em;
   color: white;
   text-align: center;
+  display: flex;
   justify-content: center;
   align-items: flex-end;
   width: 20em;
@@ -184,13 +181,13 @@ body {
 }
 
 #jjjjTableFrame {
-  display: "none";
-  flex-direction: "column";
-  position: "absolute";
   top: 50%;
   left: 50%;
+  display: none;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  flex-direction: column;
   transform: rotateX(5deg) translateZ(4.3em) translateX(-50%) translateY(-50%);
   color: white;
   font-size: 2.5em;
@@ -210,12 +207,10 @@ body {
   -webkit-user-drag: none;
   -ms-user-drag: none;
   user-drag: none;
-  display: "grid";
-  flex-direction: "initial";
-  position: "relative";
   background-image: url("images/Balasis/miniGame/woody.jpg");
   background-size: 100% 100%;
   padding: 1em;
+  display: grid;
   grid-template-columns: repeat(6, 1fr);
   align-items: center;
   justify-items: center;
@@ -225,6 +220,7 @@ body {
   transform: rotateX(5deg) translateZ(4.3em);
   transform-style: preserve-3d;
   transition: 1s linear;
+  position: relative;
   bottom: 0;
   border-radius: 10px 10px 10px 10px;
   overflow: hidden;
@@ -263,9 +259,8 @@ body {
   }
 }
 .jjjcardItemBack {
-  display: "flex";
-  flex-direction: "column";
-  position: "absolute";
+  display: flex;
+  flex-direction: column;
   height: 100%;
   width: 100%;
   background-image: url(images/Balasis/miniGame/logoNoBGHELP.png);
@@ -274,6 +269,7 @@ body {
   background-size: 80% 80%;
   border: 5px solid pink;
   backface-visibility: hidden;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -286,12 +282,12 @@ body {
 }
 
 .jjjcardItemFront {
-  display: "flex";
-  flex-direction: "column";
-  position: "absolute";
+  display: flex;
+  flex-direction: column;
   height: 100%;
   width: 100%;
   backface-visibility: hidden;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -301,12 +297,11 @@ body {
 }
 
 #jjjShowMiniGame {
-  display: "none";
-  flex-direction: "initial";
-  position: "absolute";
+  display: none;
   width: "5em";
   justify-content: flex-start;
   align-items: center;
+  position: absolute;
   top: 3.75em;
   right: -1.5em;
   font-size: 3em;
