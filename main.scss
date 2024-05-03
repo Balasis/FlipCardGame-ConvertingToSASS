@@ -34,7 +34,7 @@ Be aware that even in comments you cant write the hash symbol...
   -functions : used in jjjShowMiniGame with a dummy function (just a sum)
 
   -to be continue with build in modules....
-  
+
   */
  
 @use './other/scss/colors';
@@ -79,12 +79,14 @@ $testingTheIf:false;
   transform-style: preserve-3d;
   aspect-ratio: 3/4;
   min-width:12em ;
+
   margin: {
     left:1em;
     top:1em;
     right:1em;
     bottom:1em;
   }
+
   border-radius: 3px 3px 3px 3px;
   animation: {
     name:jjjhoverAnimation;
@@ -132,6 +134,7 @@ $testingTheIf:false;
   border-radius: 10px 10px 0px 0px;
   border:0.5em solid colors.$darkBrown;
   background-color:black;
+
     &::before{
       content:"";
       position:absolute;
@@ -143,6 +146,7 @@ $testingTheIf:false;
       background-repeat: no-repeat;
       background-size:100% 100%;
     }
+
 }
 
 #jjjjCardTimerText{
@@ -171,11 +175,13 @@ $testingTheIf:false;
 
 //Nested
 #jjjjTableFrame {
+
   h1,h2,h3,h4,h5,h6 {
     color:colors.$lightOrange;
     text-align: center;
     margin:1em;
   }
+
 }
 
 #jjjjTableFrame{
@@ -205,8 +211,10 @@ $testingTheIf:false;
 }
 
 .jjjjcardHolder{
+
   @include prefixInterpolation(moz webkit ms,user-select,none);
   @include prefixInterpolation(moz webkit ms,user-drag,none);  
+
   background-image: url("images/Balasis/miniGame/woody.jpg");
   background-size: 100% 100%;
   padding:1em;
@@ -236,15 +244,19 @@ animation-name:jjjjcardHolderCorrect;
 }
 
 @keyframes jjjjcardHolderCorrect{
+
   0%  { box-shadow:0px 0px 10px 4px transparent}
   50% { box-shadow:0px 0px 45px 14px colors.$lightGreen}
   100%{ box-shadow:0px 0px 10px 4px transparent}
+
 }
 
 @keyframes jjjjcardHolderFalse{
+
   0%  { box-shadow:0px 0px 10px 4px transparent}
   50% { box-shadow:0px 0px 45px 14px red}
   100%{ box-shadow:0px 0px 10px 4px transparent}
+
 }
 
 .jjjcardItemBack{
@@ -252,12 +264,14 @@ animation-name:jjjjcardHolderCorrect;
   flex-direction:column;
   height:100%;
   width:100%;
+
   background: {
     image:url(images/Balasis/miniGame/logoNoBGHELP.png);
     repeat: no-repeat;
     position:center center;
     size:80% 80%;
   }
+  
   border: 5px solid pink;
   backface-visibility: hidden;
   position:absolute;
