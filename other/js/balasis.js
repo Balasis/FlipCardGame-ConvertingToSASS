@@ -1,12 +1,9 @@
-//As explained at top : 1)immediately-invoked function, 2)listener for on load ,3)check body's id enable javascript code and avoid conflicts between pages
 
     (function() {
 
     document.addEventListener("DOMContentLoaded",function(){
         if (document.getElementById('jjjjMiniGameIdentifier') !== null){ 
-       function jjjjGameSetUp(){ 
-       // here I just declare a variable for all the cards and also set a starting array that holds the elements that I want to dispaly in them...
-       // as you see its 3 times the same ....
+       function jjjjGameSetUp(){
        let jjjjcardItem=document.getElementsByClassName("jjjjcardItem");
        let jjjjCardclasses=Array(
        "Empusidae","Empusidae","Empusidae",
@@ -15,17 +12,13 @@
        "Beauty","Beauty","Beauty",
        "AquaMantis","AquaMantis","AquaMantis",
        "funnySayings","funnySayings","funnySayings"
-       );       
-       //here I get all the cards, pick a random value from the array and add it as a class to each card, then i remove the value from array.
-       //this way I create sets of 3 ...so there will be the same class 3 times.
-       //the jjjjCardclasses.length ensures that the random number exists in the array...
+       );
        for (p=0;p<jjjjcardItem.length;p++){
          let getit=jjjjCardclasses[Math.floor(Math.random() * jjjjCardclasses.length)];       
          jjjjcardItem[p].classList.add(getit);
          jjjjCardclasses.splice(jjjjCardclasses.indexOf(getit),1);
-        }       
-        //Also I have added a set that its a random funny saying...
-       let jjjCardsFunnySayingsUrl=Array(
+        } 
+         let jjjCardsFunnySayingsUrl=Array(
            "bamboo.jpg",
            "getALife.jpg",
            "iAmRightHere.jpg",
@@ -33,8 +26,6 @@
            "meAlwaysRight.jpg",
            "ReallyFunny.jpg",
        );  
-       //... and in order to achieve it heres another random picker to pick an image and add it to the class funnySayings! (so there will be 3 funnySayings
-       //with this image)
        let jjjjRandomFunny=jjjCardsFunnySayingsUrl[Math.floor(Math.random() * jjjCardsFunnySayingsUrl.length)];
        
        setTimeout(function(){
@@ -44,10 +35,8 @@
            }       
        },10); 
        }        
-       //triggering the game set up
        jjjjGameSetUp();
-       let jjjjgameEnded=false;
-                //not much to explain here..same as the quiz I simple create localStorage items and keep the top 10...       
+       let jjjjgameEnded=false;  
                function jjjjSDisplayTopScores() {                       
                    let jjjjSTopScores = JSON.parse(localStorage.getItem('jjjjSTopScores')) || [];
                    let jjjjSTimeTable = document.getElementById('jjjjSTimeTable');
@@ -103,23 +92,12 @@
            let jjjjtimerIsOn=false;
            let jjjjQuiztimer=0; 
                    let jjjjQuiztimerMinutes=0;
-               //I wanted to have a hover animation. Proble was that when using transform property in to the animation
-                // and you change it later with javascript it doesnt react well..(delays e.t.c) so:
-               //..this is a tricky one 
-               //in each one of these I need to first add the clicked element to an array (jjjcardiflipped) then
-               //disactivate his animation..then add the rotation...then check if matches or it has to be flipped again
-               //and in case it doesnt match add back the animation with a delay though to have time for the flip to take place..again..
-               //so setTimeout = animation time of flip... 
            for (let i = 0; i < jjjjcardItems.length; i++) {
                jjjjcardItems[i].addEventListener('click', function (e) {
                    e.preventDefault();
                if (jjjjloadSafety==false){
                    jjjjloadSafety=true;
-                    //I checkhow many cards are flipped each time ..
                    if (jjjCardiFlipped.length === 0) {
-                    // at each flip I push the class item to an array and then compare the array items between them...
-                    //if items are the same they remain open ..else they flip back..the flip back is getting triggered
-                    //only when 3 cards are flipped..
                        jjjCardiFlipped.push(jjjjcardItems[i]);
                        if (jjjjtimerIsOn==false){
                        jjjjStartCardGameTimer();
@@ -170,8 +148,6 @@
                      },50);      
                        if (jjjCardiFlipped[0].classList[1] === jjjCardiFlipped[1].classList[1] &&
                            jjjCardiFlipped[1].classList[1] === jjjCardiFlipped[2].classList[1]) {       
-                           // Code to execute when cards match (for 3 cards)
-                         //I add delay so the flip animation end first and then activate the commands for the 3 flipped cards that match...
                            setTimeout(function(){        
                            jjjCardiFlipped[0].classList.add('jjjcardItemRotatedRemoved');
                            jjjCardiFlipped[1].classList.add('jjjcardItemRotatedRemoved');                  
@@ -241,7 +217,6 @@
                        jjjjloadSafety=false;
                    },20)       
                    }       
-                   //this gets triggered in the end of the game if you won....
                    function jjjjSSaveTopScores(jjjjSScore) {              
                        let jjjjSTopScores = JSON.parse(localStorage.getItem('jjjjSTopScores')) || [];   
                        jjjjSTopScores.push(jjjjSScore);
@@ -249,7 +224,6 @@
                        jjjjSTopScores = jjjjSTopScores.slice(0, 10);
                        localStorage.setItem('jjjjSTopScores', JSON.stringify(jjjjSTopScores));
                    }
-                    //a timer which I get the value in the end of the game ...
                    function jjjjStartCardGameTimer(){       
                        jjjjtimerIsOn=true;
                        jjjjCountDownInterval=setInterval(function(){       
@@ -287,21 +261,16 @@
                            }   ,1000);
                    }
                });
-           }
-                        //just resetting all values to start..also the timer..                        
+           }                     
                         function jjjjResetMiniGameLet() {                            
                             if (typeof jjjjCountDownInterval !== 'undefined') {
                                 clearInterval(jjjjCountDownInterval);
                             }                        
-                            //reset the array that I push the sets...
                             jjjCardiFlipped = [];                        
-                        //I remove all the setTimeouts delays...(in case there is a delay on so I can reset instantly);
-                        //the command is just getting its windowSetTimeout one after another and 0 it..
                             let id = window.setTimeout(function() {}, 0);
                             while (id--) {
                                 window.clearTimeout(id);
                             }                            
-                            //rest of commands is to reset timers and recalling the set classes to cards e.t.c
                             for (let i = 0; i < jjjjcardItems.length; i++) {
                                 jjjjcardItems[i].removeAttribute('style');
                                 jjjjcardItems[i].querySelector('.jjjcardItemFront').removeAttribute('style');
